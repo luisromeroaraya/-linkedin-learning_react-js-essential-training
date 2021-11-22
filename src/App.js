@@ -1,66 +1,30 @@
-// import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import restaurant from "./restaurant.jpg";
 
-function Header(props) {
+function SecretComponent() {  
   return (
-    <header>
-      <h1>{props.name}'s Kitchen</h1>
-    </header>
+    <h1>Secret information for authorized users only.</h1>
   );
 }
 
-function Main(props) {
+function RegularComponent() {
   return (
-    <section>
-      <p>We serve the most { props.adjective } food around.</p>
-      <img src = {restaurant} alt="image of a table" height={200} />
-      <ul style={{ textAlign: "left" }}>
-        {props.dishes.map((dish) => <li key={dish.id}>{dish.title}</li>)}
-      </ul>
-    </section>
+    <h1>Everyone can see this component.</h1>
   );
 }
 
-function Footer(props) {
+function App({authorized}) {
+  // if (props.authorized) {
+  //   return <SecretComponent />;
+  // } else {
+  //   return <RegularComponent />;
+  // }
+
   return (
-    <footer>
-      <p>Copyright &copy; { props.year } Eve's Kitchen</p>
-    </footer>
+    <>
+    {authorized ? <SecretComponent /> : <RegularComponent />}
+    </>
   )
-}
-
-const dishes = [
-  "Macaroni and Cheese",
-  "Salmon",
-  "Tofu with Vegetables",
-  "Minestrone"
-];
-
-const dishObjects = dishes.map((dish, i) => ({id: i, title: dish }));
-
-function App() {
-  return (
-    <div className="App">
-      <Header name="Cindy" />
-      <Main adjective="amazing" dishes={dishObjects} />
-      <Footer year={ new Date().getFullYear() } />
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-    </div>
-  );
 }
 
 export default App;
