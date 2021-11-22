@@ -1,3 +1,8 @@
+# I'll be following the LinkedIn course: [React.js Essential Training](https://www.linkedin.com/learning/react-js-essential-training)
+
+<p align="center"><a href="https://reactjs.org/" target="_blank"><img src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png" width="400"></a></p>
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
